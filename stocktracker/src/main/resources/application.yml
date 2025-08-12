@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: stocktracker-app
+  flyway:
+    enabled: true
+logging:
+  level:
+    org.flywaydb: info
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stocktracker_dev
+    username: st_user
+    password: st_pass
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stocktracker_test
+    username: st_user
+    password: st_pass

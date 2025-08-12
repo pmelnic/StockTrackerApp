@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS app_init (
+    id INT PRIMARY KEY
+);
