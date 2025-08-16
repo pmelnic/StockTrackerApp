@@ -1,26 +1,20 @@
 spring:
   application:
-    name: stocktracker-app
-  flyway:
-    enabled: true
-logging:
-  level:
-    org.flywaydb: info
----
-spring:
+    name: stocktracker-APP
   config:
     activate:
       on-profile: dev
+
   datasource:
-    url: jdbc:postgresql://localhost:5432/stocktracker_dev
-    username: st_user
-    password: st_pass
----
-spring:
-  config:
-    activate:
-      on-profile: test
-  datasource:
-    url: jdbc:postgresql://localhost:5432/stocktracker_test
-    username: st_user
-    password: st_pass
+    url: jdbc:postgresql://localhost:5432/stocktracker
+    username: stock
+    password: stock
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+
